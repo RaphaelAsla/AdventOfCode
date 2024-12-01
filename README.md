@@ -26,7 +26,7 @@ pip install -e . --config-settings editable_mode=compat
 ### or
 pip install -e . --user --config-settings editable_mode=compat
 ```
-Once you’ve installed aoc-tools, when you run a solution for the first time, you will be prompted to enter your Advent of Code session-cookie. <br>
+Once you’ve installed aoc-tools, when you run a solution for the first time, you will be prompted to enter your <br> Advent of Code session-cookie. <br>
 This cookie can be found in the Chrome DevTools while you're logged in to [adventofcode.com](adventofcode.com). <br>
-Then the solution will automatically fetch your input for the current day and submit your output. <br>
-I’ve commented out the submission part in all solutions, so you don’t have to worry about accidentally submitting your answers.
+When you submit the cookie the solution will automatically fetch your input for the current day and submit your output. <br>
+

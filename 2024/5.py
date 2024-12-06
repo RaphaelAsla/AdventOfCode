@@ -1,7 +1,7 @@
 """ Advent Of Code 2024 : 5 """
 
 from aoctools import *
-from collections import defaultdict, deque
+from collections import defaultdict
 
 def main(aocd: AOCD):
     a = 0

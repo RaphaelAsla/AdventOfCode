@@ -10,7 +10,6 @@ def main(aocd: AOCD):
     rules, updates = [x.split('\n') for x in aocd.slist_split_at("\n\n")]
 
     updates = [s.split(',') for s in updates]
-    max_size = max(len(update) for update in updates)
 
     before = defaultdict(list)
     for x, y in [rule.split('|') for rule in rules]:
@@ -18,7 +17,7 @@ def main(aocd: AOCD):
 
     for update in updates:
         sorted = True
-        for _ in range(max_size):
+        for _ in range(len(update) // 2 + 1):
             for i in range(len(update) - 1, 0, -1):
                 for j in range(i):
                     if update[j] not in before[update[i]]:

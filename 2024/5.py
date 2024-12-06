@@ -9,7 +9,7 @@ def main(aocd: AOCD):
 
     rules, updates = [x.split('\n') for x in aocd.slist_split_at("\n\n")]
 
-    updates = [s.split(',') for s in updates]
+    updates = [update.split(',') for update in updates]
 
     before = defaultdict(list)
     for x, y in [rule.split('|') for rule in rules]:

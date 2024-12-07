@@ -23,7 +23,7 @@ pip install -e . --config-settings editable_mode=compat
 ### or
 pip install -e . --user --config-settings editable_mode=compat
 ```
-When you run a solution for the first time, you will be prompted to enter your Advent of Code session-cookie. <br>
-This cookie can be found in the Chrome DevTools while you're logged in to [adventofcode.com](adventofcode.com). <br>
+When you run a solution for the first time, you will be prompted to enter your AoC session-cookie. <br>
+This is a one-time thing (per year), as the cookie is valid throughout December. <br>
+The cookie can be found in the Chrome DevTools while you're logged in to [adventofcode.com](adventofcode.com). <br>
 When you submit the cookie the solution will automatically fetch your input for the current day and submit the output. <br>
-

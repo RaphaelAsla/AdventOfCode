@@ -14,10 +14,7 @@ def calc(x, eq, p2=False):
                 nxt *= rest[i]
             elif p2 and op == "||":
                 nxt = int(str(nxt) + str(rest[i]))
-        if p2 and x == nxt:
-            ans += nxt
-            break
-        elif x == nxt:
+        if x == nxt:
             ans += nxt
             break
     return ans

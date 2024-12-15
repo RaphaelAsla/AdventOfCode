@@ -62,7 +62,7 @@ def main(aocd: AOCD):
             if pos not in seen:
                 cluster = cbfs(pos_only, pos)
                 seen.update(cluster)
-                if len(cluster) > 15: # We basically search if a cluster larger than a threshold of 15 exists in the grid
+                if len(cluster) > 15: # We basically search if a cluster larger than a threshold of 15 exists in the grid (you might need to tweak that for your input)
                     b = frames
                     found = True
                     break

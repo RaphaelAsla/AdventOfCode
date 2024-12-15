@@ -33,10 +33,8 @@ def main(aocd: AOCD):
         vel = list(map(int, parts[1][2:].split(',')))
         pos_vel.append([pos, vel])
 
-
     width = 101
     height = 103
-    pos_vel_100 = []
 
     frames = 1
     found = False
@@ -68,27 +66,25 @@ def main(aocd: AOCD):
                     break
 
         if frames == 100:
-            pos_vel_100 = pos_vel
+            Q = defaultdict(int)
+            half_width = width // 2
+            half_height = height // 2
+
+            for cx in range(2):
+                for cy in range(2):
+                    start_x = 0 if cx == 0 else half_width + 1
+                    end_x = half_width if cx == 0 else width
+                    start_y = 0 if cy == 0 else half_height + 1
+                    end_y = half_height if cy == 0 else height
+                    for (x, y), _ in pos_vel:
+                        if start_x <= x < end_x and start_y <= y < end_y:
+                            Q[cx, cy] += 1
+
+            for v in Q.values():
+                if v > 0:
+                    a *= v
 
         frames += 1
-
-    Q = defaultdict(int)
-    half_width = width // 2
-    half_height = height // 2
-
-    for cx in range(2):
-        for cy in range(2):
-            start_x = 0 if cx == 0 else half_width + 1
-            end_x = half_width if cx == 0 else width
-            start_y = 0 if cy == 0 else half_height + 1
-            end_y = half_height if cy == 0 else height
-            for (x, y), _ in pos_vel_100:
-                if start_x <= x < end_x and start_y <= y < end_y:
-                    Q[cx, cy] += 1
-
-    for v in Q.values():
-        if v > 0:
-            a *= v
 
     aocd.p1(a)
     aocd.p2(b)

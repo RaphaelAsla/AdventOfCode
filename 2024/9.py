@@ -3,10 +3,10 @@
 from aoctools import *
 
 def main(aocd: AOCD):
-    disk_map = list(map(int, aocd.as_str))
-
     a = 0
     b = 0
+
+    disk_map = list(map(int, aocd.as_str))
 
     flatten_blocks = sum([[-1 if i % 2 else i // 2] * int(n) for (i, n) in enumerate(disk_map)], [])
 
@@ -28,12 +28,12 @@ def main(aocd: AOCD):
     space = []
     blocks = []
     idx = 0
-    for i, blen in enumerate(disk_map):
+    for i, l in enumerate(disk_map):
         if i % 2:
-            space.append((idx, blen))
+            space.append((idx, l))
         else:
-            blocks.append((idx, blen))
-        idx += blen
+            blocks.append((idx, l))
+        idx += l
 
     for i, block in [*enumerate(blocks)][::-1]: 
         for j, fs in enumerate(space):        

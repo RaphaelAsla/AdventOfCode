@@ -4,9 +4,9 @@ from aoctools import *
 
 
 def main(aocd: AOCD):
-    l, r = aocd.imultilist
-    aocd.p1(sum(abs(x - y) for x, y in zip(sorted(l), sorted(r))))
-    aocd.p2(sum(c * r.count(c) for c in l))
+    l, r = aocd.icolumns
+    aocd.p1(sum(abs(int(x) - int(y)) for x, y in zip(sorted(l), sorted(r))))
+    aocd.p2(sum(int(c) * r.count(c) for c in l))
 
 if __name__ == '__main__':
     aocd = AOCD(2024, 1)

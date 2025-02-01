@@ -1,5 +1,8 @@
 # Advent of Code
 Personal repository for my Advent of Code solutions
+Missing days: 2024(21, 22, 23, 24)
+Missing parts: 2024(15:2, 16:2, 17:2)
+I couldn't afford wasting more time on these but I will come back and finish them at some point this year
 ## About Advent of Code
 Advent of Code is an Advent calendar of small programming puzzles for a variety of skill levels that can be solved in any programming language you like. <br>
 People use them as interview prep, company training, university coursework, practice problems, a speed contest, or to challenge each other.

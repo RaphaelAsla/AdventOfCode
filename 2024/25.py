@@ -4,7 +4,6 @@ from aoctools import *
 
 def main(aocd: AOCD):
     a = 0
-    b = 0
 
     entries = aocd.slist_split_at("\n\n")
 

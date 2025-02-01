@@ -28,6 +28,7 @@ def main(aocd: AOCD):
     space = []
     blocks = []
     idx = 0
+
     for i, l in enumerate(disk_map):
         if i % 2:
             space.append((idx, l))

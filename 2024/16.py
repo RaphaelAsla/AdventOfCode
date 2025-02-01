@@ -35,7 +35,6 @@ def dijkstra(start, goal, grid):
 
 def main(aocd: AOCD):
     a = 0
-    b = 0
 
     grid = aocd.vsgrid
 

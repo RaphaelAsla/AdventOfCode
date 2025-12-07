@@ -6,8 +6,8 @@ from aoctools import *
 def main(aocd: AOCD):
     inp = aocd.sgrid
 
-    p1 = 0
-    p2 = 0
+    a = 0
+    b = 0
 
     DIRS_8 = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
 
@@ -24,7 +24,7 @@ def main(aocd: AOCD):
 
             if adj < 4:
                 if first_iter:
-                    p1 += 1
+                    a += 1
                 to_remove.append(pos)
 
         if not to_remove:
@@ -32,12 +32,12 @@ def main(aocd: AOCD):
 
         for pos in to_remove:
             inp[pos] = "."
-            p2 += 1
+            b += 1
 
         first_iter = False
 
-    aocd.p1(p1)
-    aocd.p2(p2)
+    aocd.p1(a)
+    aocd.p2(b)
 
 
 if __name__ == "__main__":

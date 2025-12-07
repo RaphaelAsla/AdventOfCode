@@ -6,8 +6,8 @@ from aoctools import *
 def main(aocd: AOCD):
     inp = [tuple(map(int, s.strip().split('-'))) for s in aocd.slist_split_at(",")]
 
-    p1 = 0
-    p2 = 0
+    a = 0
+    b = 0
 
     for start, end in inp:
         for i in range(start, end + 1):
@@ -15,18 +15,18 @@ def main(aocd: AOCD):
             L = len(s)
 
             if L % 2 == 0 and s[:L//2] == s[L//2:]:
-                p1 += i
+                a += i
 
             if L > 1 and len(set(s)) == 1:
-                p2 += i
+                b += i
             else:
                 for n in range(2, (L // 2) + 1):
                     if L % n == 0 and all(len(set(s[j::n])) == 1 for j in range(n)):
-                        p2 += i
+                        b += i
                         break
 
-    aocd.p1(p1)
-    aocd.p2(p2)
+    aocd.p1(a)
+    aocd.p2(b)
 
 if __name__ == '__main__':
     import time

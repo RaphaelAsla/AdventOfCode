@@ -11,19 +11,19 @@ def main(aocd: AOCD):
     b = 0
 
     merged = []
+
     for start, end in ranges:
         if merged and start <= merged[-1][1]:
             merged[-1] = (merged[-1][0], max(merged[-1][1], end))
         else:
             merged.append((start, end))
 
-    for id in ids:
+    for i, id in enumerate(ids):
         for r in merged:
             if id >= r[0] and id <= r[1]:
                 a += 1
-
-    for r in merged:
-        b += r[1] - r[0] + 1
+            if i == 0:
+                b += r[1] - r[0] + 1
 
     aocd.p1(a)
     aocd.p2(b)
